@@ -31,7 +31,7 @@ Ce dépôt contient :
 │   │   ├── wordpress
 │   │   └── tools
 │   └── docker-compose.yml
-└── README.md
+└── Makefile
 ```
 
 ## Services
@@ -64,7 +64,7 @@ Suivez ces étapes pour déployer l'environnement avec Docker :
 2. Démarrez les services Docker avec Docker Compose :
 
     ```bash
-    docker-compose up --build
+    make
     ```
 
 3. Les services seront disponibles aux adresses suivantes une fois lancés :
@@ -80,7 +80,7 @@ Ouvrez votre navigateur et allez sur `http://localhost` pour accéder à l'inter
 
 ### Accéder à PhpMyAdmin
 
-Si PhpMyAdmin est activé, rendez-vous sur `http://localhost:8080`. Connectez-vous avec les identifiants configurés pour MariaDB.
+Si PhpMyAdmin est activé, rendez-vous sur `http://localhost:8080/wp_admin`. Connectez-vous avec les identifiants configurés pour MariaDB.
 
 ## Configuration
 
