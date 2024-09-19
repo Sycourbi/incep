@@ -1,5 +1,11 @@
 # Inception
 
+![Docker](https://img.shields.io/badge/container-Docker-blue)
+![Docker Compose](https://img.shields.io/badge/docker%20compose-yes-blue)
+![MariaDB](https://img.shields.io/badge/database-MariaDB-blue)
+![Nginx](https://img.shields.io/badge/web%20server-Nginx-green)
+![WordPress](https://img.shields.io/badge/cms-WordPress-blueviolet)
+
 ## Description
 
 **Inception** est un projet du cursus 42 qui consiste à configurer et déployer un ensemble de services dans des conteneurs Docker, le tout orchestré via Docker Compose. Le but est de comprendre les bases de la virtualisation à travers Docker, tout en respectant des normes strictes de gestion des ressources et des bonnes pratiques en termes de sécurité.
