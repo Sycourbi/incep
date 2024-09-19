@@ -1,0 +1,40 @@
+Nginx : C'est le serveur web qui reçoit les requêtes des utilisateurs et affiche les pages du site.
+MariaDB : C'est la base de données qui stocke toutes les informations du site.
+WordPress : C'est l'application qui permet de gérer le contenu du site et d'interagir avec les deux autres composants.
+
+Commande docker:
+    docker-compose -f srcs/docker-compose.yml -p inception ps = voir les docker actif
+    docker volume ls = voir les volume actif
+    docker volume inspect <volume_name> = voir le volume specifique
+
+Mariadb:
+    docker-compose -f srcs/docker-compose.yml -p inception exec mariadb bash
+    mysql -u root -p
+    SHOW DATABASES;
+    USE <databases_name>;
+    SHOW TABLES;
+    DESCRIBE <name_table>;
+
+Docker est une plateforme qui permet de creer, deployer et executer des applications dans des conteneurs. Un conteneur est une unite legere et autonome qui inclut tout ce dont une application a besoin pour fonctionner : le code, les bibliotheques, les configurations, et les dependances. Voici comment il fonctionne :
+    Creation : On utilise un Dockerfile pour definir les etapes necessaires a la construction d'une image Docker. Une image Docker est un modele statique qui contient tout ce qui est necessaire pour executer une application.
+    Execution : On lance un conteneur a partir d'une image Docker. Le conteneur execute l'application dans un environnement isole.
+Docker Compose est un outil qui simplifie la gestion de plusieurs conteneurs Docker en definissant une application multi-conteneurs dans un fichier de configuration, appele docker-compose.yml. Avec Docker Compose :
+    Definition : On decrit les services, les reseaux et les volumes necessaires pour l'application dans un fichier YAML.
+    Gestion : On utilise des commandes comme docker-compose up pour demarrer tous les services definis dans le fichier, et docker-compose down pour les arreter.
+
+La difference entre une image Docker utilisee avec Docker Compose et sans Docker Compose;
+    Sans Docker Compose : Les images Docker sont gerees individuellement. Vous utilisez des commandes comme docker build pour creer une image et docker run pour lancer un conteneur a partir de cette image. Vous devez gerer manuellement les dependances entre conteneurs, les reseaux, et les volumes.
+    Avec Docker Compose : Vous definissez toutes les images et leurs configurations dans un fichier docker-compose.yml. Docker Compose gere automatiquement le demarrage des conteneurs, leur mise en reseau, et les volumes. Cela simplifie la gestion des applications complexes avec plusieurs conteneurs en une seule commande (docker-compose up).
+
+L'avantage de Docker par rapport aux VM;
+    Isolation : Les conteneurs Docker offrent une isolation des applications au niveau du systeme d'exploitation, tandis que les machines virtuelles (VM) offrent une isolation au niveau du materiel. Cela signifie que les conteneurs sont plus légers et plus rapides a démarrer que les VM.
+    Performance : Les conteneurs partagent le noyau du systeme d'exploitation hôte et sont plus efficaces en termes de ressources que les VM, qui necessitent leur propre systeme d'exploitation complet.
+    Portabilite : Les conteneurs Docker sont portables entre differents environnements (developpement, test, production) car ils incluent tout ce dont l'application a besoin pour fonctionner, independamment du systeme d'exploitation sous-jacent.
+    Deploiement : Docker permet un deploiement plus rapide et plus facile des applications grâce a la coherence des environnements de developpement et de production. Les VM necessitent souvent plus de temps et de ressources pour la configuration et le deploiement.
+
+La structure du repertoire dans un projet Docker est importante pour organiser les fichiers de maniere logique et pour faciliter la gestion des conteneurs, des services et des configurations. Voici quelques elements typiques :
+    Repertoire requirements : Contient les fichiers necessaires pour construire les images Docker (par exemple, Dockerfiles).
+    Repertoire srcs : Contient les configurations Docker Compose et d'autres scripts necessaires au projet.
+    Volumes : Les repertoires pour les volumes Docker sont definis pour persister les donnees entre les redemarrages des conteneurs.
+Cette structure aide a maintenir une separation claire entre les differents composants du projet et facilite le deploiement et la gestion des services. Elle garantit egalement que les fichiers et configurations sont organises de maniere a respecter les meilleures pratiques de Docker.
+En suivant cette structure, vous assurez que chaque partie du projet est bien definie et que la configuration est facile a gerer et a comprendre.
