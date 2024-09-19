@@ -5,6 +5,9 @@
 ![MariaDB](https://img.shields.io/badge/database-MariaDB-blue)
 ![Nginx](https://img.shields.io/badge/web%20server-Nginx-green)
 ![WordPress](https://img.shields.io/badge/cms-WordPress-blueviolet)
+![42 Paris](https://img.shields.io/badge/42-Paris-blue)
+
+
 
 ## Description
 
